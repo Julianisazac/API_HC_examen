@@ -24,16 +24,13 @@ const HistoriasClinicasSchema = ({
     },
     fechaAtencion:{
         type:String,
-        required:[true, 'la fecha es requerida']
+        required:[true, 'La fecha es requerida']
     },
     medicos:{
         type:String,
         required:[true, 'El nombre del médico es requerido']
     },
-    precioDolar: {
-        type: Number,
-        required: [true, 'Ingresar el precio en dólares'],
-    },
+    
 
 });
 

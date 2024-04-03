@@ -1,9 +1,9 @@
 const { response } = require('express')
 
-const HistoriasClinicas = require('../model/HistoriasClinicas')
+const Historias = require('../model/HistoriasClinicas')
 
 const getHistoriasClinicas = async (req, res) => {
-    const HistoriaClinica = await HistoriasClinicas.find();
+    const HistoriaClinica = await Historias.find();
     res.json({
         msg: HistoriaClinica
     })
@@ -14,7 +14,7 @@ const postHistoriasClinicas = async (req, res) => {
     let mensaje = 'Inserción exitosa'
     try {
 
-        const usuarios = new HistoriasClinicas(datos)
+        const usuarios = new Historias(datos)
         await usuarios.save()
 
     } catch (error) {
@@ -37,11 +37,11 @@ const putHistoriasClinicas = async (req, res) => {
         genero,
         fechaAtencion,
         medicos, 
-        precioDolar
+        
     } = req.body; 
     let mensaje = 'Actualizacion Exitosa'
     try {
-      const HistoriaClinica = await  HistoriasClinicas.findOneAndUpdate(
+      const HistoriaClinica = await  Historias.findOneAndUpdate(
         { idHistoriasClinicas: idHistoriasClinicas },
         {
         nombres:nombres,
@@ -50,7 +50,6 @@ const putHistoriasClinicas = async (req, res) => {
         genero:genero,
         fechaAtencion:fechaAtencion,
         medicos:medicos,
-        precioDolar:precioDolar
         }
       )
       
@@ -63,10 +62,10 @@ const putHistoriasClinicas = async (req, res) => {
   };
 
 const deleteHistoriasClinicas = async (req, res) => {
-    const {idHistoriasClinicas} = req.body
+    const {idHistoriasClinicas} = req.params
     let mensaje = 'Eliminación exitosa'
     try {
-        const HistoriaClinica = await HistoriasClinicas.findOneAndDelete({idHistoriasClinicas: idHistoriasClinicas})
+        const HistoriaClinica = await Historias.findOneAndDelete({idHistoriasClinicas: idHistoriasClinicas})
     } catch (error) {
         mensaje = error;
     }

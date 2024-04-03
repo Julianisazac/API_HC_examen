@@ -6,7 +6,7 @@ const{getHistoriasClinicas, postHistoriasClinicas, putHistoriasClinicas, deleteH
 
 route.get('/', getHistoriasClinicas)
 route.post('/', postHistoriasClinicas)
-route.put('/', putHistoriasClinicas)
-route.delete('/', deleteHistoriasClinicas)
+route.put('/:idHistoriasClinicas', putHistoriasClinicas)
+route.delete('/:idHistoriasClinicas', deleteHistoriasClinicas)
 
 module.exports = route
