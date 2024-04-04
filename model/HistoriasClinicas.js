@@ -30,6 +30,10 @@ const HistoriasClinicasSchema = ({
         type:String,
         required:[true, 'El nombre del médico es requerido']
     },
+    grupoSanguineo:{
+        type:String,
+        required:[true, 'El RH es requerido']
+    },
     
 
 });

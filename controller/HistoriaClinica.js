@@ -37,6 +37,7 @@ const putHistoriasClinicas = async (req, res) => {
         genero,
         fechaAtencion,
         medicos, 
+        grupoSanguineo,
         
     } = req.body; 
     let mensaje = 'Actualizacion Exitosa'
@@ -50,6 +51,7 @@ const putHistoriasClinicas = async (req, res) => {
         genero:genero,
         fechaAtencion:fechaAtencion,
         medicos:medicos,
+        grupoSanguineo:grupoSanguineo,
         }
       )
       
